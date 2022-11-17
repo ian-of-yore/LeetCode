@@ -1,6 +1,4 @@
-const address = "1.1.1.1";
+const arr = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c'];
 
-const arr = address.split('.');
-const result = arr.join('[.]');
-
-console.log(result)
+const ans = new Set(arr);
+console.log(ans.size)
