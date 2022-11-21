@@ -1,26 +1,17 @@
-var firstPalindrome = function (words) {
+let num = [4, 2, 5, 7];
+let result = [];
+let even = 0;
+let odd = 1;
 
-    // A function which checks if a single word is palindrome or not
-    function palindrome(word) {
-        let wordLower = word.toLowerCase();
-        let result = true;
-        let loopLength = Math.floor((wordLower.length / 2));
-        for (let i = 1; i <= loopLength; i++) {
-            if (wordLower[i - 1] !== wordLower[wordLower.length - i])
-                result = false;
-        }
-        return result;
+for (let i = 0; i < num.length; i++) {
+    if (num[i] % 2 === 0) {
+        result[even] = num[i];
+        even += 2;
     }
-
-    // Loop thorugh each words of the given array applying the created function
-    // While checking the elements of the array, if the program finds a palindrome word, it breaks 
-    // the program and returns that word. No need to go through all the elements as only the first
-    // word is required.
-
-    for (let word of words) {
-        if (palindrome(word)) {
-            return word;
-        }
+    else {
+        result[odd] = num[i];
+        odd += 2;
     }
-    return "";
-};
+}
+
+console.log("result", result)
