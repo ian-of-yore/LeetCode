@@ -5,14 +5,18 @@ const mat = [
 
 var diagonalSum = function (mat) {
     let sum = 0;
-    for (let i = 0; i < mat.length; i++) {
-        for (let j = 0; j < mat.length; j++) {
-            if (i === j) {
-                console.log(mat[i][j])
-            }
-        }
+    const n = mat.length;
+
+    for (let i = 0; i < n; i++) {
+        sum += mat[i][i] + mat[i][n - i - 1];
     }
-    // return sum;
-};
+
+    if (n % 2 === 1) {
+        sum = sum - mat[(n - 1) / 2][(n - 1) / 2];
+    }
+
+    return sum;
+
+}
 
 console.log(diagonalSum(mat))
